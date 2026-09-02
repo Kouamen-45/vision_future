@@ -1,9 +1,12 @@
 :root {
-    --primary-color: #00b4d8;  /* 🌟 Le bleu ciel adopté pour la Navbar et le Footer */
+    --primary-color: #00b4d8;
+    /* 🌟 Le bleu ciel adopté pour la Navbar et le Footer */
     --secondary-color: #1e293b;
-    --accent-color: #0077b6;   /* Un bleu un peu plus foncé pour les boutons/accents au survol */
+    --accent-color: #0077b6;
+    /* Un bleu un peu plus foncé pour les boutons/accents au survol */
     --text-main: #333333;
-    --bg-light: #f1f5f9;      /* Fond global gris clair et lumineux */
+    --bg-light: #f1f5f9;
+    /* Fond global gris clair et lumineux */
 }
 
 * {
@@ -81,7 +84,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--secondary-color); /* S'assure d'un bon contraste au survol */
+    color: var(--secondary-color);
+    /* S'assure d'un bon contraste au survol */
 }
 
 /* Container principal (pousse le footer vers le bas) */
@@ -184,8 +188,12 @@ footer {
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    /* S'adapte au téléphone */
     max-width: 600px;
-    border-left: 5px solid var(--primary-color);
+    /* Ne dépasse pas 600px sur PC */
+    margin: 0 auto;
+    /* Centre l'élément */
 }
 
 .contact-item {
@@ -262,8 +270,8 @@ footer {
 .hero-section.hero-home {
     position: relative;
     /* 🌟 MODIFICATION ICI : Changement de 0.75 à 0.4 pour éclaircir le voile sombre 🌟 */
-    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), 
-                url("fong.png");
+    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)),
+        url("fong.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
