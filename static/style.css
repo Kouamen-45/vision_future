@@ -69,18 +69,37 @@ nav {
 }
 
 /* Menu */
+
+nav {
+    background: var(--primary-color);
+    padding: 10px 15px;
+    /* Réduit les marges sur mobile */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    /* Permet aux éléments de descendre s'il n'y a plus de place */
+    width: 100%;
+}
+
+/* Ajustement du menu de navigation */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 12px;
+    /* Réduit l'espace entre les liens pour qu'ils tiennent sur mobile */
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    /* Légèrement plus petit sur mobile */
 }
 
 nav ul li a:hover {
