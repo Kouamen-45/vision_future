@@ -1,12 +1,9 @@
 :root {
-    --primary-color: #00b4d8;
-    /* 🌟 Le bleu ciel adopté pour la Navbar et le Footer */
+    --primary-color: #00b4d8;  /* Bleu ciel pour la Navbar et le Footer */
     --secondary-color: #1e293b;
-    --accent-color: #0077b6;
-    /* Un bleu un peu plus foncé pour les boutons/accents au survol */
+    --accent-color: #0077b6;   /* Bleu plus foncé pour les boutons et accents */
     --text-main: #333333;
-    --bg-light: #f1f5f9;
-    /* Fond global gris clair et lumineux */
+    --bg-light: #f1f5f9;      /* Fond global gris clair et lumineux */
 }
 
 * {
@@ -31,10 +28,10 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar (en bleu ciel grâce à --primary-color) */
+/* Navbar - Corrigée pour rester bien alignée sur mobile et PC */
 nav {
     background: var(--primary-color);
-    padding: 15px 40px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,13 +39,13 @@ nav {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 /* Styles pour le Logo Seul */
 .logo-container {
     display: flex;
     align-items: center;
-    height: 100%;
 }
 
 .logo-container a {
@@ -58,7 +55,7 @@ nav {
 }
 
 .navbar-logo {
-    height: 90px;
+    height: 60px; /* Taille réduite et fluide pour mobile */
     width: auto;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
@@ -68,55 +65,38 @@ nav {
     transform: scale(1.05);
 }
 
-/* Menu */
-
-nav {
-    background: var(--primary-color);
-    padding: 10px 15px;
-    /* Réduit les marges sur mobile */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-    /* Permet aux éléments de descendre s'il n'y a plus de place */
-    width: 100%;
-}
-
-/* Ajustement du menu de navigation */
+/* Menu de navigation */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 12px;
-    /* Réduit l'espace entre les liens pour qu'ils tiennent sur mobile */
+    gap: 15px; /* Espace optimisé pour les petits écrans */
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s;
     font-size: 0.95rem;
-    /* Légèrement plus petit sur mobile */
 }
 
 nav ul li a:hover {
     color: var(--secondary-color);
-    /* S'assure d'un bon contraste au survol */
 }
 
-/* Container principal (pousse le footer vers le bas) */
+/* Container principal étendu pour occuper toute la largeur */
 .container {
-    max-width: 1100px;
+    max-width: 100%;
     width: 100%;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin: 0;
+    padding: 0;
     flex: 1;
 }
 
-/* Footer (en bleu ciel grâce à --primary-color) ancré en bas */
+/* Footer ancré en bas */
 footer {
     background: var(--primary-color);
     color: white;
@@ -145,6 +125,7 @@ footer {
 /* Styles pour la page Applications */
 .page-header {
     margin-bottom: 40px;
+    padding: 0 20px;
 }
 
 .page-header h2 {
@@ -208,11 +189,9 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     width: 100%;
-    /* S'adapte au téléphone */
     max-width: 600px;
-    /* Ne dépasse pas 600px sur PC */
     margin: 0 auto;
-    /* Centre l'élément */
+    border-left: 5px solid var(--primary-color);
 }
 
 .contact-item {
@@ -285,18 +264,18 @@ footer {
     transform: translateX(5px);
 }
 
-/* Style de base pour la section Hero avec votre image de fond (fong.png) */
+/* Section Hero en plein écran avec image de fond et voile lumineux */
 .hero-section.hero-home {
     position: relative;
-    /* 🌟 MODIFICATION ICI : Changement de 0.75 à 0.4 pour éclaircir le voile sombre 🌟 */
-    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)),
-        url("fong.png");
+    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), 
+                url("fong.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 12px;
+    border-radius: 0;
     padding: 80px 20px;
-    margin-top: 20px;
+    margin-top: 0;
+    width: 100%;
     color: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -311,7 +290,7 @@ footer {
 }
 
 .hero-section.hero-home h1 {
-    font-size: 3rem;
+    font-size: 2.3rem; /* Adapté pour une belle lisibilité sur mobile et PC */
     color: #ffffff;
     margin-bottom: 20px;
     font-weight: 700;
@@ -319,7 +298,7 @@ footer {
 }
 
 .hero-section.hero-home p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #cbd5e1;
     max-width: 700px;
     margin: 0 auto 30px;
