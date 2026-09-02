@@ -1,0 +1,313 @@
+:root {
+    --primary-color: #00b4d8;  /* 🌟 Le bleu ciel adopté pour la Navbar et le Footer */
+    --secondary-color: #1e293b;
+    --accent-color: #0077b6;   /* Un bleu un peu plus foncé pour les boutons/accents au survol */
+    --text-main: #333333;
+    --bg-light: #f1f5f9;      /* Fond global gris clair et lumineux */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Structure globale pour coller le footer en bas */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar (en bleu ciel grâce à --primary-color) */
+nav {
+    background: var(--primary-color);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour le Logo Seul */
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    height: 90px;
+    width: auto;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color); /* S'assure d'un bon contraste au survol */
+}
+
+/* Container principal (pousse le footer vers le bas) */
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Footer (en bleu ciel grâce à --primary-color) ancré en bas */
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: auto;
+}
+
+/* Boutons et composants */
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Styles pour la page Applications */
+.page-header {
+    margin-bottom: 40px;
+}
+
+.page-header h2 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    font-size: 2rem;
+}
+
+.page-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.app-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+}
+
+.app-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.app-card p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.app-badge {
+    background: #e2e8f0;
+    color: var(--secondary-color);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Styles pour la page Contact */
+.contact-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.contact-item {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Styles pour la page d'accueil (index.html) */
+.hero-section {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.feature-card p {
+    color: #64748b;
+}
+
+/* Styles pour la page Services (services.html) */
+.services-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+}
+
+.service-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--primary-color);
+    font-size: 1.05rem;
+    color: var(--text-main);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateX(5px);
+}
+
+/* Style de base pour la section Hero avec votre image de fond (fong.png) */
+.hero-section.hero-home {
+    position: relative;
+    /* 🌟 MODIFICATION ICI : Changement de 0.75 à 0.4 pour éclaircir le voile sombre 🌟 */
+    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), 
+                url("fong.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    padding: 80px 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-section.hero-home h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section.hero-home p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.hero-section.hero-home .btn {
+    background: var(--primary-color);
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-section.hero-home .btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}

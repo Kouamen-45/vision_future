@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Vision Future - Accueil{% endblock %}
+{% block content %}
+<div class="hero-section hero-home">
+    <div class="hero-content">
+        <h1>L'innovation au service de votre vie</h1>
+        <p>Vision Future est une startup informatique spécialisée dans le développement logiciel, d'applications mobiles et PC, prête à répondre aux défis de demain.</p>
+        <a href="{{ url_for('services') }}" class="btn">Découvrir nos services</a>
+    </div>
+</div>
+
+<div class="features-grid">
+    <div class="feature-card">
+        <h3>Développement sur Mesure</h3>
+        <p>Création de logiciels robustes et évolutifs adaptés aux exigences stratégiques des entreprises.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Applications Mobiles & PC</h3>
+        <p>Interfaces fluides, intuitives et multiplateformes prêtes à l'emploi.</p>
+    </div>
+</div>
+{% endblock %}
