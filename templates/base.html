@@ -14,7 +14,14 @@
             <img src="{{ url_for('static', filename='logo.png') }}" alt="Vision Future" class="navbar-logo">
         </a>
     </div>
-    <ul>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-list">
         <li><a href="{{ url_for('home') }}">Accueil</a></li>
         <li><a href="{{ url_for('applications') }}">Nos Applications</a></li>
         <li><a href="{{ url_for('services') }}">Services</a></li>
@@ -22,13 +29,23 @@
     </ul>
 </nav>
 
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
 
-    <footer>
-        <p>&copy; 2026 Vision Future. Tous droits réservés. | Faciliter la vie de demain.</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 Vision Future. Tous droits réservés. | Faciliter la vie de demain.</p>
+</footer>
+
+<script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        mobileMenu.classList.toggle('is-active');
+    });
+</script>
 
 </body>
 </html>
